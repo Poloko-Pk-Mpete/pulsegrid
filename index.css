@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Geist, Inter, sans-serif;
+  --font-mono: JetBrains Mono, monospace;
+  
+  --color-grid-bg: #09090B;
+  --color-grid-card: #121214;
+  --color-grid-border: #1F1F23;
+  --color-grid-muted: #71717A;
+}
+
+body {
+  background: #09090B;
+  color: white;
+}
