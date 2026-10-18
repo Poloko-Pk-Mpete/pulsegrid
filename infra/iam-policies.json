@@ -1,0 +1,46 @@
+{
+  "api-role": {
+    "RoleName": "pulsegrid-lambda-api-role",
+    "InlinePolicy": "DynamoRead",
+    "Policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": ["dynamodb:Query", "dynamodb:Scan"],
+          "Resource": "arn:aws:dynamodb:us-east-1:899042279703:table/pulsegrid-telemetry"
+        }
+      ]
+    },
+    "Managed": "AWSLambdaBasicExecutionRole"
+  },
+  "telemetry-role": {
+    "RoleName": "pulsegrid-lambda-telemetry-role",
+    "InlinePolicy": "DynamoWrite",
+    "Policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Action": ["dynamodb:BatchWriteItem", "dynamodb:PutItem"],
+          "Resource": "arn:aws:dynamodb:us-east-1:899042279703:table/pulsegrid-telemetry"
+        }
+      ]
+    },
+    "Managed": "AWSLambdaBasicExecutionRole"
+  },
+  "github-deploy-role": {
+    "RoleName": "pulsegrid-github-deploy",
+    "Trust": "OIDC token.actions.githubusercontent.com",
+    "Condition": "repo:YOUR_GITHUB_USER/*:*"
+  },
+  "dynamodb": {
+    "TTL": "ENABLED on attribute ttl",
+    "Billing": "PAY_PER_REQUEST",
+    "Expiry": "30 days"
+  },
+  "cloudfront": {
+    "OAC": "E1DBEALQQP9E6A",
+    "OAI": "None - using modern OAC"
+  }
+}
