@@ -1,6 +1,6 @@
 # PulseGrid - Secure Serverless Uptime Dashboard
 
-Live Frontend: https://dXXXXXXXXX.cloudfront.net
+Live Frontend: https://hidden-lab-8e54.pkupwork88.workers.dev/
 Live API: https://5ceurkewhi.execute-api.us-east-1.amazonaws.com/prod/status
 Live API History: https://5ceurkewhi.execute-api.us-east-1.amazonaws.com/prod/history?endpoint=/api/auth&hours=1
 
